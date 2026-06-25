@@ -7,24 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1FA3F83A79789FED884FF4 /* ReportContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EAC67497E758F643555772 /* ReportContext.swift */; };
+		1EE74CC4E11881E729E38FE9 /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7700D1114FCD2CCA410E3F93 /* TotalActivityReport.swift */; };
+		22079D65ED5770FCFD03C60B /* ReportContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EAC67497E758F643555772 /* ReportContext.swift */; };
 		2719EFD40C6C5805D1854629 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F41086E3F3895B053BF8440 /* HealthStore.swift */; };
 		4766B9D3D55CB69F0BB89217 /* LumenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1889C12EFDE21DA0BDD151C6 /* LumenModel.swift */; };
 		63CA6F4A353056F178970BC8 /* Pillars.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A645589DACCA7DCECD5FB /* Pillars.swift */; };
+		6641BB95F5FA3144F98B0CC4 /* LumenReportExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9287E664C0F94B680CD9CA5 /* LumenReportExtension.swift */; };
 		6ACB7B053FD6A9EEF2FE03BD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFC0833E2772C7462238290 /* SettingsView.swift */; };
+		6EFB9B75BD237BF06ABEDA7C /* FocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEDCEB3776C7BC5DAF8C3D /* FocusView.swift */; };
 		773FA1361E95D40DD6310993 /* LumenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BED7C9127526606A596340 /* LumenApp.swift */; };
 		85D6515AAC86502BC003C13F /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D8AF2CB38B615790F103D9 /* TrendsView.swift */; };
 		994F782287920E4097852C07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A344EC8028FF1FF31AA92DBD /* Assets.xcassets */; };
+		A454DD43C65D9F868F15C2C3 /* TotalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E26E4CCF6126B0E5C32432 /* TotalActivityView.swift */; };
 		A6757B882F3521FBDF1A23C7 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0796A085C2D49E78A5880 /* RootView.swift */; };
+		B4D361A74F2CCDDB15774840 /* LumenActivityReport.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D42F1BE331A3AD54F4ABEDB5 /* LumenActivityReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D9B5D8E4BD82B0828606FFD9 /* Scoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818033FEB9756323E9484C28 /* Scoring.swift */; };
 		E8E5FCB9D945A379D2C11259 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE30672CA6CEE647FF276CE /* TodayView.swift */; };
 		EBE3AC4DB319BCC0789558B2 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2475E95C93F9949E6E88330 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B8458ADB212997912292D930 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6B7785E344ACFF4DA083092 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7504E61195E7AEDFCBC59ED4;
+			remoteInfo = LumenActivityReport;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E5B62F48085CF1368B34BF7E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B4D361A74F2CCDDB15774840 /* LumenActivityReport.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0CD0E32DB9F2FF6CF0C8687F /* LumenActivityReport.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LumenActivityReport.entitlements; sourceTree = "<group>"; };
+		13EAC67497E758F643555772 /* ReportContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportContext.swift; sourceTree = "<group>"; };
 		1889C12EFDE21DA0BDD151C6 /* LumenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumenModel.swift; sourceTree = "<group>"; };
+		21E26E4CCF6126B0E5C32432 /* TotalActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityView.swift; sourceTree = "<group>"; };
 		28D8AF2CB38B615790F103D9 /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
 		337A3269E47126DC851115EE /* Lumen.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Lumen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49FEDCEB3776C7BC5DAF8C3D /* FocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusView.swift; sourceTree = "<group>"; };
 		4DE30672CA6CEE647FF276CE /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		7700D1114FCD2CCA410E3F93 /* TotalActivityReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityReport.swift; sourceTree = "<group>"; };
 		7F41086E3F3895B053BF8440 /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		818033FEB9756323E9484C28 /* Scoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoring.swift; sourceTree = "<group>"; };
 		94B0796A085C2D49E78A5880 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -32,7 +68,10 @@
 		A344EC8028FF1FF31AA92DBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9BED7C9127526606A596340 /* LumenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumenApp.swift; sourceTree = "<group>"; };
 		BA3A645589DACCA7DCECD5FB /* Pillars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pillars.swift; sourceTree = "<group>"; };
+		D42F1BE331A3AD54F4ABEDB5 /* LumenActivityReport.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = LumenActivityReport.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2475E95C93F9949E6E88330 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		E8F8A3B7E544FAC0337EF3D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E9287E664C0F94B680CD9CA5 /* LumenReportExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumenReportExtension.swift; sourceTree = "<group>"; };
 		FCFC0833E2772C7462238290 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				9A87E38572968714465B9877 /* Lumen */,
+				D0A8C79399DCE7DE59C975FD /* LumenActivityReport */,
+				D6A4F247132006FD44A4688D /* Shared */,
 				70C838A3277A6AAF3F2B0484 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				337A3269E47126DC851115EE /* Lumen.app */,
+				D42F1BE331A3AD54F4ABEDB5 /* LumenActivityReport.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,6 +133,26 @@
 			path = Lumen;
 			sourceTree = "<group>";
 		};
+		D0A8C79399DCE7DE59C975FD /* LumenActivityReport */ = {
+			isa = PBXGroup;
+			children = (
+				E8F8A3B7E544FAC0337EF3D7 /* Info.plist */,
+				0CD0E32DB9F2FF6CF0C8687F /* LumenActivityReport.entitlements */,
+				E9287E664C0F94B680CD9CA5 /* LumenReportExtension.swift */,
+				7700D1114FCD2CCA410E3F93 /* TotalActivityReport.swift */,
+				21E26E4CCF6126B0E5C32432 /* TotalActivityView.swift */,
+			);
+			path = LumenActivityReport;
+			sourceTree = "<group>";
+		};
+		D6A4F247132006FD44A4688D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				13EAC67497E758F643555772 /* ReportContext.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		E5D4DC352786992867F45FE7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +165,7 @@
 		EF1674E1CF9C2121AE622855 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				49FEDCEB3776C7BC5DAF8C3D /* FocusView.swift */,
 				94B0796A085C2D49E78A5880 /* RootView.swift */,
 				FCFC0833E2772C7462238290 /* SettingsView.swift */,
 				E2475E95C93F9949E6E88330 /* Theme.swift */,
@@ -121,10 +184,12 @@
 			buildPhases = (
 				04E1F8E02FA22F0432CCEA4F /* Sources */,
 				2F1ADCC8D621EDFBF2163C5B /* Resources */,
+				E5B62F48085CF1368B34BF7E /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4E42541E4DCCAE9736B1C517 /* PBXTargetDependency */,
 			);
 			name = Lumen;
 			packageProductDependencies = (
@@ -132,6 +197,23 @@
 			productName = Lumen;
 			productReference = 337A3269E47126DC851115EE /* Lumen.app */;
 			productType = "com.apple.product-type.application";
+		};
+		7504E61195E7AEDFCBC59ED4 /* LumenActivityReport */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 613EFDE6ED5DCB78AAE80574 /* Build configuration list for PBXNativeTarget "LumenActivityReport" */;
+			buildPhases = (
+				40EA9B6C5E237CF7E5E928B6 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LumenActivityReport;
+			packageProductDependencies = (
+			);
+			productName = LumenActivityReport;
+			productReference = D42F1BE331A3AD54F4ABEDB5 /* LumenActivityReport.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -143,6 +225,10 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					3604D51825E37895FA8BE7E6 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					7504E61195E7AEDFCBC59ED4 = {
 						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
@@ -163,6 +249,7 @@
 			projectRoot = "";
 			targets = (
 				3604D51825E37895FA8BE7E6 /* Lumen */,
+				7504E61195E7AEDFCBC59ED4 /* LumenActivityReport */,
 			);
 		};
 /* End PBXProject section */
@@ -183,10 +270,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EFB9B75BD237BF06ABEDA7C /* FocusView.swift in Sources */,
 				2719EFD40C6C5805D1854629 /* HealthStore.swift in Sources */,
 				773FA1361E95D40DD6310993 /* LumenApp.swift in Sources */,
 				4766B9D3D55CB69F0BB89217 /* LumenModel.swift in Sources */,
 				63CA6F4A353056F178970BC8 /* Pillars.swift in Sources */,
+				0A1FA3F83A79789FED884FF4 /* ReportContext.swift in Sources */,
 				A6757B882F3521FBDF1A23C7 /* RootView.swift in Sources */,
 				D9B5D8E4BD82B0828606FFD9 /* Scoring.swift in Sources */,
 				6ACB7B053FD6A9EEF2FE03BD /* SettingsView.swift in Sources */,
@@ -196,7 +285,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		40EA9B6C5E237CF7E5E928B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6641BB95F5FA3144F98B0CC4 /* LumenReportExtension.swift in Sources */,
+				22079D65ED5770FCFD03C60B /* ReportContext.swift in Sources */,
+				1EE74CC4E11881E729E38FE9 /* TotalActivityReport.swift in Sources */,
+				A454DD43C65D9F868F15C2C3 /* TotalActivityView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4E42541E4DCCAE9736B1C517 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7504E61195E7AEDFCBC59ED4 /* LumenActivityReport */;
+			targetProxy = B8458ADB212997912292D930 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2D2F99B6443D2E21D64FD94E /* Release */ = {
@@ -350,6 +458,24 @@
 			};
 			name = Debug;
 		};
+		C202B98F075197DD57DFB752 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LumenActivityReport/LumenActivityReport.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LumenActivityReport/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lyonecho.lumen.activityreport;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		DB69D605D392822F88A42FB2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -374,6 +500,24 @@
 			};
 			name = Release;
 		};
+		E1EA20B4C214EA0AEFBE288D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LumenActivityReport/LumenActivityReport.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LumenActivityReport/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lyonecho.lumen.activityreport;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -382,6 +526,15 @@
 			buildConfigurations = (
 				495B8F62CC5EA7D99DAD8F2D /* Debug */,
 				DB69D605D392822F88A42FB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		613EFDE6ED5DCB78AAE80574 /* Build configuration list for PBXNativeTarget "LumenActivityReport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1EA20B4C214EA0AEFBE288D /* Debug */,
+				C202B98F075197DD57DFB752 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

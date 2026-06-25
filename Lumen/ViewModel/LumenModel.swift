@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import Observation
+import FamilyControls
 
 enum LoadState: Equatable { case idle, requesting, loading, ready, unavailable, empty }
 
@@ -13,13 +14,35 @@ final class LumenModel {
     var selectedIndex: Int = 0
     var state: LoadState = .idle
     var didOnboard: Bool = UserDefaults.standard.bool(forKey: "lumen.didOnboard")
+    var screenAuthorized: Bool = AuthorizationCenter.shared.authorizationStatus == .approved
 
     private let health = HealthStore()
     private let weightsKey = "lumen.weights"
+    private let appGroup = UserDefaults(suiteName: LumenScreenTime.appGroup)
 
     init() {
         loadWeights()
         if !HealthStore.isAvailable { state = .unavailable }
+    }
+
+    // MARK: - Screen Time (Focus pillar)
+
+    func requestScreenTime() async {
+        do {
+            try await AuthorizationCenter.shared.requestAuthorization(for: .individual)
+        } catch {
+            // User declined or unavailable — leave Focus excluded from the score.
+        }
+        screenAuthorized = AuthorizationCenter.shared.authorizationStatus == .approved
+    }
+
+    /// Pull the latest total written by the report extension into today's metrics.
+    func ingestScreenTime() {
+        guard let g = appGroup, g.double(forKey: LumenScreenTime.updatedKey) > 0 else { return }
+        let hours = g.double(forKey: LumenScreenTime.hoursKey)
+        guard hours > 0, let i = days.indices.last else { return }
+        days[i].values["screen_hours"] = (hours * 100).rounded() / 100
+        recompute()
     }
 
     var currentScore: DayScore? {

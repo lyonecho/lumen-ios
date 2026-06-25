@@ -19,6 +19,7 @@ targets:
     deploymentTarget: "17.0"
     sources:
       - path: Lumen
+      - path: Shared
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.lyonecho.lumen
@@ -36,3 +37,33 @@ targets:
       properties:
         com.apple.developer.healthkit: true
         com.apple.developer.healthkit.access: []
+        com.apple.developer.family-controls: true
+        com.apple.security.application-groups:
+          - group.com.lyonecho.lumen
+    dependencies:
+      - target: LumenActivityReport
+        embed: true
+  LumenActivityReport:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: LumenActivityReport
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lyonecho.lumen.activityreport
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: NO
+    info:
+      path: LumenActivityReport/Info.plist
+      properties:
+        CFBundleDisplayName: Focus
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.deviceactivityui.report-extension
+    entitlements:
+      path: LumenActivityReport/LumenActivityReport.entitlements
+      properties:
+        com.apple.developer.family-controls: true
+        com.apple.security.application-groups:
+          - group.com.lyonecho.lumen

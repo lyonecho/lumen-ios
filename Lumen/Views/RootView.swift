@@ -30,6 +30,7 @@ struct MainTabs: View {
         TabView {
             TodayView().tabItem { Label("Today", systemImage: "house.fill") }
             TrendsView().tabItem { Label("Trends", systemImage: "chart.line.uptrend.xyaxis") }
+            FocusView().tabItem { Label("Focus", systemImage: "iphone") }
             SettingsView().tabItem { Label("Settings", systemImage: "slider.horizontal.3") }
         }
         .task {

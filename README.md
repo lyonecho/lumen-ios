@@ -60,3 +60,16 @@ xcodegen generate
 ```
 Edit Swift files freely; only re-run that if you add/remove files or change
 build settings.
+
+## Focus pillar via Screen Time (this branch only)
+
+The `screen-time` branch adds automatic Focus-pillar tracking using Apple's
+Screen Time API (FamilyControls + DeviceActivity). A `DeviceActivityReport`
+extension reads your daily total and passes it to the app through a shared App
+Group, where it folds into your Life Score (open the **Focus** tab → *Connect
+Screen Time*).
+
+**Requires a paid Apple Developer Program membership ($99/yr).** App Groups and
+Family Controls cannot be provisioned with a free Apple ID, so this branch will
+fail to sign on a free account — that's why `main` stays HealthKit-only and
+free-installable. Switch to this branch once you have a paid account.

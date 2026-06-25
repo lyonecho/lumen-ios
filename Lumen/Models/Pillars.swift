@@ -97,7 +97,7 @@ let PILLARS: [PillarDef] = [
             MetricDef(key: "daylight_minutes", name: "Time in daylight", unit: "min", direction: .higherBetter, target: 30, format: .minutes, targetText: "≥ 30 min", why: "Outdoor light anchors your circadian clock, lifts mood, improves sleep."),
         ]),
     PillarDef(key: .focus, name: "Focus & Screen Time", shortName: "Focus",
-        blurb: "Attention as a health metric. Screen Time isn't on HealthKit, so this stays manual for now.",
+        blurb: "Attention as a health metric, read live from Apple's Screen Time via the Focus tab.",
         weight: 14,
         metrics: [
             MetricDef(key: "screen_hours", name: "Screen time", unit: "hours", direction: .lowerBetter, target: 3, weight: 1.4, format: .hours, targetText: "≤ 3 h", source: .manual, why: "Total iPhone screen time — a blunt but honest proxy for time on the glass."),
