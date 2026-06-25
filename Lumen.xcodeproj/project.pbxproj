@@ -11,7 +11,9 @@
 		1EE74CC4E11881E729E38FE9 /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7700D1114FCD2CCA410E3F93 /* TotalActivityReport.swift */; };
 		22079D65ED5770FCFD03C60B /* ReportContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EAC67497E758F643555772 /* ReportContext.swift */; };
 		2719EFD40C6C5805D1854629 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F41086E3F3895B053BF8440 /* HealthStore.swift */; };
+		420BA6406893B5E621150AE1 /* ReportContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EAC67497E758F643555772 /* ReportContext.swift */; };
 		4766B9D3D55CB69F0BB89217 /* LumenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1889C12EFDE21DA0BDD151C6 /* LumenModel.swift */; };
+		5B0D30F608B96555E17C6FF0 /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAC4CFAB7BD607D056288CD /* DeviceActivityMonitorExtension.swift */; };
 		63CA6F4A353056F178970BC8 /* Pillars.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3A645589DACCA7DCECD5FB /* Pillars.swift */; };
 		6641BB95F5FA3144F98B0CC4 /* LumenReportExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9287E664C0F94B680CD9CA5 /* LumenReportExtension.swift */; };
 		6ACB7B053FD6A9EEF2FE03BD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFC0833E2772C7462238290 /* SettingsView.swift */; };
@@ -22,6 +24,7 @@
 		A454DD43C65D9F868F15C2C3 /* TotalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E26E4CCF6126B0E5C32432 /* TotalActivityView.swift */; };
 		A6757B882F3521FBDF1A23C7 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B0796A085C2D49E78A5880 /* RootView.swift */; };
 		B4D361A74F2CCDDB15774840 /* LumenActivityReport.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D42F1BE331A3AD54F4ABEDB5 /* LumenActivityReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C8D4980292C2D9B853A326D4 /* LumenActivityMonitor.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7A9E9C9D22EDF17E2775119D /* LumenActivityMonitor.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D9B5D8E4BD82B0828606FFD9 /* Scoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818033FEB9756323E9484C28 /* Scoring.swift */; };
 		E8E5FCB9D945A379D2C11259 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE30672CA6CEE647FF276CE /* TodayView.swift */; };
 		EBE3AC4DB319BCC0789558B2 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2475E95C93F9949E6E88330 /* Theme.swift */; };
@@ -35,6 +38,13 @@
 			remoteGlobalIDString = 7504E61195E7AEDFCBC59ED4;
 			remoteInfo = LumenActivityReport;
 		};
+		D25DD56C6BCCB18730E0E8A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6B7785E344ACFF4DA083092 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96E6E2F04ABCF7737D368265;
+			remoteInfo = LumenActivityMonitor;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +55,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				B4D361A74F2CCDDB15774840 /* LumenActivityReport.appex in Embed Foundation Extensions */,
+				C8D4980292C2D9B853A326D4 /* LumenActivityMonitor.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,12 +66,16 @@
 		0CD0E32DB9F2FF6CF0C8687F /* LumenActivityReport.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LumenActivityReport.entitlements; sourceTree = "<group>"; };
 		13EAC67497E758F643555772 /* ReportContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportContext.swift; sourceTree = "<group>"; };
 		1889C12EFDE21DA0BDD151C6 /* LumenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumenModel.swift; sourceTree = "<group>"; };
+		20C7E1313AD094B939364D07 /* LumenActivityMonitor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LumenActivityMonitor.entitlements; sourceTree = "<group>"; };
 		21E26E4CCF6126B0E5C32432 /* TotalActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityView.swift; sourceTree = "<group>"; };
 		28D8AF2CB38B615790F103D9 /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
 		337A3269E47126DC851115EE /* Lumen.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Lumen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FEDCEB3776C7BC5DAF8C3D /* FocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusView.swift; sourceTree = "<group>"; };
 		4DE30672CA6CEE647FF276CE /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		6C8D0FF50322D0F353130290 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7700D1114FCD2CCA410E3F93 /* TotalActivityReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityReport.swift; sourceTree = "<group>"; };
+		7A9E9C9D22EDF17E2775119D /* LumenActivityMonitor.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = LumenActivityMonitor.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DAC4CFAB7BD607D056288CD /* DeviceActivityMonitorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityMonitorExtension.swift; sourceTree = "<group>"; };
 		7F41086E3F3895B053BF8440 /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		818033FEB9756323E9484C28 /* Scoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoring.swift; sourceTree = "<group>"; };
 		94B0796A085C2D49E78A5880 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -80,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				9A87E38572968714465B9877 /* Lumen */,
+				D5EF10C0E4EF6AFDC9FC5202 /* LumenActivityMonitor */,
 				D0A8C79399DCE7DE59C975FD /* LumenActivityReport */,
 				D6A4F247132006FD44A4688D /* Shared */,
 				70C838A3277A6AAF3F2B0484 /* Products */,
@@ -114,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				337A3269E47126DC851115EE /* Lumen.app */,
+				7A9E9C9D22EDF17E2775119D /* LumenActivityMonitor.appex */,
 				D42F1BE331A3AD54F4ABEDB5 /* LumenActivityReport.appex */,
 			);
 			name = Products;
@@ -143,6 +160,16 @@
 				21E26E4CCF6126B0E5C32432 /* TotalActivityView.swift */,
 			);
 			path = LumenActivityReport;
+			sourceTree = "<group>";
+		};
+		D5EF10C0E4EF6AFDC9FC5202 /* LumenActivityMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				7DAC4CFAB7BD607D056288CD /* DeviceActivityMonitorExtension.swift */,
+				6C8D0FF50322D0F353130290 /* Info.plist */,
+				20C7E1313AD094B939364D07 /* LumenActivityMonitor.entitlements */,
+			);
+			path = LumenActivityMonitor;
 			sourceTree = "<group>";
 		};
 		D6A4F247132006FD44A4688D /* Shared */ = {
@@ -190,6 +217,7 @@
 			);
 			dependencies = (
 				4E42541E4DCCAE9736B1C517 /* PBXTargetDependency */,
+				921BB2966FAC94C27D8017F6 /* PBXTargetDependency */,
 			);
 			name = Lumen;
 			packageProductDependencies = (
@@ -215,6 +243,23 @@
 			productReference = D42F1BE331A3AD54F4ABEDB5 /* LumenActivityReport.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		96E6E2F04ABCF7737D368265 /* LumenActivityMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2EA8EF10CACBF965341DC20 /* Build configuration list for PBXNativeTarget "LumenActivityMonitor" */;
+			buildPhases = (
+				AF4B453B0903485120E37BB0 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LumenActivityMonitor;
+			packageProductDependencies = (
+			);
+			productName = LumenActivityMonitor;
+			productReference = 7A9E9C9D22EDF17E2775119D /* LumenActivityMonitor.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -229,6 +274,10 @@
 						ProvisioningStyle = Automatic;
 					};
 					7504E61195E7AEDFCBC59ED4 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					96E6E2F04ABCF7737D368265 = {
 						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
@@ -249,6 +298,7 @@
 			projectRoot = "";
 			targets = (
 				3604D51825E37895FA8BE7E6 /* Lumen */,
+				96E6E2F04ABCF7737D368265 /* LumenActivityMonitor */,
 				7504E61195E7AEDFCBC59ED4 /* LumenActivityReport */,
 			);
 		};
@@ -296,6 +346,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AF4B453B0903485120E37BB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B0D30F608B96555E17C6FF0 /* DeviceActivityMonitorExtension.swift in Sources */,
+				420BA6406893B5E621150AE1 /* ReportContext.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -303,6 +362,11 @@
 			isa = PBXTargetDependency;
 			target = 7504E61195E7AEDFCBC59ED4 /* LumenActivityReport */;
 			targetProxy = B8458ADB212997912292D930 /* PBXContainerItemProxy */;
+		};
+		921BB2966FAC94C27D8017F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96E6E2F04ABCF7737D368265 /* LumenActivityMonitor */;
+			targetProxy = D25DD56C6BCCB18730E0E8A0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -458,6 +522,24 @@
 			};
 			name = Debug;
 		};
+		B1831998841A58A180C26382 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LumenActivityMonitor/LumenActivityMonitor.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LumenActivityMonitor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lyonecho.lumen.activitymonitor;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		C202B98F075197DD57DFB752 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -475,6 +557,24 @@
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
+		};
+		D2BFEB14987ECDBD9CD9928B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LumenActivityMonitor/LumenActivityMonitor.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LumenActivityMonitor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lyonecho.lumen.activitymonitor;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
 		};
 		DB69D605D392822F88A42FB2 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -544,6 +644,15 @@
 			buildConfigurations = (
 				AA076C7BC7C6C45F1BB03F03 /* Debug */,
 				2D2F99B6443D2E21D64FD94E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E2EA8EF10CACBF965341DC20 /* Build configuration list for PBXNativeTarget "LumenActivityMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2BFEB14987ECDBD9CD9928B /* Debug */,
+				B1831998841A58A180C26382 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

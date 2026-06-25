@@ -73,3 +73,26 @@ Screen Time*).
 Family Controls cannot be provisioned with a free Apple ID, so this branch will
 fail to sign on a free account — that's why `main` stays HealthKit-only and
 free-installable. Switch to this branch once you have a paid account.
+
+### Background updates (DeviceActivityMonitor)
+
+A second extension, **`LumenActivityMonitor`**, keeps the Focus number fresh in
+the background. From the Focus tab you pick which apps/categories count
+(`FamilyActivityPicker`); the app then schedules a daily monitor with a ladder of
+usage checkpoints (15, 30, 45, 60, 90, 120, 180, 300 min). As you cross each, iOS
+wakes the monitor, which writes a "floor" of hours to the App Group; the app
+folds it into your Life Score on next foreground.
+
+Honest limits (Apple's, not ours):
+- The background number is a **stepped floor** for the **apps you selected**, not
+  the live device-wide total. Between checkpoints it can read a little low, and
+  iOS may delay an update until your next unlock.
+- The **DeviceActivityReport** (the exact number shown on the Focus tab) is
+  sandboxed and **cannot** feed the score — it's display-only. The monitor is the
+  sole background source.
+- DeviceActivity callbacks **never fire on the Simulator** — verify on a real
+  iPhone with real elapsed usage.
+
+This design was built from a research pass and hardened by an adversarial review
+(both caught real bugs — e.g. the report-extension sandbox and the midnight-reset
+edge case).

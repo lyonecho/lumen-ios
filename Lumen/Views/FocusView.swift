@@ -4,23 +4,42 @@ import FamilyControls
 
 struct FocusView: View {
     @Environment(LumenModel.self) private var model
+    @State private var pickerPresented = false
 
     private var todayFilter: DeviceActivityFilter {
         let interval = Calendar.current.dateInterval(of: .day, for: Date())
             ?? DateInterval(start: Date(), duration: 86400)
+        let s = model.focusSelection
+        // Scope the live report to the SAME apps the score uses, so the exact
+        // number shown matches what the Focus pillar is based on.
+        if hasSelection {
+            return DeviceActivityFilter(
+                segment: .daily(during: interval), users: .all, devices: .all,
+                applications: s.applicationTokens, categories: s.categoryTokens, webDomains: s.webDomainTokens)
+        }
         return DeviceActivityFilter(segment: .daily(during: interval), users: .all, devices: .all)
     }
 
+    private var hasSelection: Bool {
+        let s = model.focusSelection
+        return !s.applicationTokens.isEmpty || !s.categoryTokens.isEmpty || !s.webDomainTokens.isEmpty
+    }
+
     var body: some View {
-        NavigationStack {
+        @Bindable var model = model // local bindable for the picker's two-way selection
+        return NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     if model.screenAuthorized {
-                        Text("Today's screen time, read live from Apple's Screen Time and folded into your Focus pillar.")
+                        Text("Today's screen time for the apps you choose, from Apple's Screen Time. The number below is exact; your Focus score updates in steps in the background.")
                             .font(.subheadline).foregroundStyle(Palette.textSecondary)
 
-                        // Embedding the report runs the extension, which writes the
-                        // total to the shared App Group.
+                        if let err = model.monitorError {
+                            Banner(icon: "exclamationmark.triangle.fill", tint: Palette.bandAtRisk,
+                                   title: "Background tracking", message: err)
+                        }
+
+                        // Apple renders the exact total inside this report view.
                         DeviceActivityReport(.totalActivity, filter: todayFilter)
                             .frame(height: 130)
                             .background(Palette.bgSurface, in: RoundedRectangle(cornerRadius: 14))
@@ -42,6 +61,24 @@ struct FocusView: View {
                         }
 
                         Button {
+                            pickerPresented = true
+                        } label: {
+                            HStack {
+                                Image(systemName: "square.grid.2x2")
+                                Text(hasSelection ? "Edit tracked apps & categories" : "Choose apps & categories to track")
+                            }
+                            .frame(maxWidth: .infinity).padding(.vertical, 12)
+                        }
+                        .background(Palette.bgSurface, in: RoundedRectangle(cornerRadius: 14))
+                        .overlay(RoundedRectangle(cornerRadius: 14).stroke(Palette.border, lineWidth: 1))
+                        .foregroundStyle(Palette.textPrimary)
+                        .familyActivityPicker(isPresented: $pickerPresented, selection: $model.focusSelection)
+                        .onChange(of: pickerPresented) { _, presented in
+                            // Persist + (re)arm the background monitor when the picker closes.
+                            if !presented { model.updateFocusSelection(model.focusSelection) }
+                        }
+
+                        Button {
                             model.ingestScreenTime()
                         } label: {
                             HStack { Image(systemName: "arrow.clockwise"); Text("Update Life Score") }
@@ -50,7 +87,7 @@ struct FocusView: View {
                         .background(Palette.accent, in: RoundedRectangle(cornerRadius: 14))
                         .foregroundStyle(.black)
 
-                        Text("The number comes from Apple's report extension, which only exposes total usage — Lumen never sees which apps you used.")
+                        Text("Background updates only track the apps and categories you pick, and arrive in steps (every 15–30 min of use) — so between checkpoints your score can read a little low, and iOS may delay an update until you next unlock. Open this tab for the exact figure. Lumen only ever sees a total, never which apps you used. Background tracking needs a real iPhone — not the Simulator.")
                             .font(.caption).foregroundStyle(Palette.textMuted)
                     } else {
                         VStack(spacing: 16) {
@@ -78,7 +115,9 @@ struct FocusView: View {
             .navigationTitle("Focus")
             .toolbarColorScheme(.dark, for: .navigationBar)
             .task {
-                // Give the embedded report a moment to compute, then ingest.
+                // Re-arm the daily monitor (no-op until apps are selected), then
+                // give the embedded report a moment to compute and ingest.
+                model.startBackgroundMonitoring()
                 try? await Task.sleep(for: .seconds(2))
                 model.ingestScreenTime()
             }

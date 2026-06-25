@@ -43,6 +43,8 @@ targets:
     dependencies:
       - target: LumenActivityReport
         embed: true
+      - target: LumenActivityMonitor
+        embed: true
   LumenActivityReport:
     type: app-extension
     platform: iOS
@@ -63,6 +65,31 @@ targets:
           NSExtensionPointIdentifier: com.apple.deviceactivityui.report-extension
     entitlements:
       path: LumenActivityReport/LumenActivityReport.entitlements
+      properties:
+        com.apple.developer.family-controls: true
+        com.apple.security.application-groups:
+          - group.com.lyonecho.lumen
+  LumenActivityMonitor:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: LumenActivityMonitor
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lyonecho.lumen.activitymonitor
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: NO
+    info:
+      path: LumenActivityMonitor/Info.plist
+      properties:
+        CFBundleDisplayName: Focus Monitor
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.deviceactivity.monitor-extension
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).LumenActivityMonitor
+    entitlements:
+      path: LumenActivityMonitor/LumenActivityMonitor.entitlements
       properties:
         com.apple.developer.family-controls: true
         com.apple.security.application-groups:
